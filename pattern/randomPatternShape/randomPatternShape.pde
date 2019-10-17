@@ -32,7 +32,7 @@ void draw() {
     int idx = floor(random(1) * tiles.length);
     pushMatrix();
     translate(positions[i].x+step/2.0, positions[i].y+step/2.0);
-    rotate(random(TWO_PI));
+    //rotate(random(TWO_PI));
     scale(random(0.2, 0.8));
     translate(-positions[i].x-step/2.0, -positions[i].y-step/2.0);
     shape(tiles[idx], positions[i].x, positions[i].y);
