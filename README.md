@@ -9,3 +9,6 @@ https://vimeo.com/31471771 | https://onformative.com/work/montblanc-generative-a
 https://www.studiofeixen.ch/luzerner-theater
 
 https://www.studiofeixen.ch/wanderlust
+
+https://www.underconsideration.com/brandnew/archives/new_logo_and_identity_for_fugue_by_sagmeister_walsh.php
+
