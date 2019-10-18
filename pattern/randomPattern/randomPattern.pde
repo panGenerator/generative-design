@@ -1,4 +1,4 @@
-int count = 7;
+int count = 4;
 PShape[] tiles = new PShape[count];
 int step = 50;
 int seed = 0;
@@ -11,15 +11,16 @@ void setup() {
   }
 }
 void draw() {
-  fill(0);
-  noStroke();
+  noFill();
+  strokeWeight(1.5);
   background(255);
   randomSeed(seed);
   for (int x=0; x<width;x+=step)
   {
     for (int y=0; y<height;y+=step)
     {
-      fill(map(x,0,width, 0, 255));
+      
+      stroke(map(x,0,width, 100, 200), map(y, 0, height, 50, 250),0);
       int idx = floor(random(1) * tiles.length);
       shape(tiles[idx], x, y);
     }
