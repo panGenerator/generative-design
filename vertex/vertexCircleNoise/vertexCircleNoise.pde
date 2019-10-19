@@ -7,9 +7,12 @@ void setup(){
 void draw(){
   
   background(100);
-  drawBlob( width / 2.0, height / 2.0, 250, 50, #27FAFF, 155.0, 10, 100 );
-  drawBlob( width / 2.0, height / 2.0, 150, 20, #27FAFF, 155.0, 10, 300 );
-  drawBlob( width / 2.0, height / 2.0, 80, 10, #27FAFF, 155.0, 10, 400 );
+  float cx = width / 2.0;
+  float cy = height / 2.0;
+  
+  drawBlob( cx, cy, 250, 50, #27FAFF, 155.0, 10, 100 );
+  drawBlob( cx, cy, 150, 20, #27FAFF, 155.0, 10, 300 );
+  drawBlob( cx, cy, 80, 10,  #27FAFF, 155.0, 10, 400 );
 
 }
 
