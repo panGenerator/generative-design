@@ -1,14 +1,15 @@
 // CSS Properties: Style Attributes
 PShape s;
 boolean style = true;
+
 void setup() {
-  size(300, 300);
-  s = loadShape("shroom.svg");
+  size(800, 600);
+  s = loadShape("test.svg");
 }
 
 void draw() {
   background(204);
-  shape(s, 100, 100);
+  shape(s, 0, 0);
 }
 
 void mousePressed() {

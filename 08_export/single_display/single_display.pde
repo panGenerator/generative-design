@@ -1,6 +1,6 @@
 import processing.pdf.*;
 
-boolean record;
+boolean record = false;
 
 void setup() {
   size(400, 400);
@@ -18,7 +18,7 @@ void draw() {
 
   if (record) {
     endRecord();
-  record = false;
+    record = false;
   }
 }
 

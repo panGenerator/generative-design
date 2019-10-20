@@ -1,7 +1,16 @@
+import processing.sound.*;
+Amplitude amp;
+AudioIn in;
 
+color c1 = #00F9FF;
+color c2 = #FF007C;
 
 void setup(){
- size( 600, 600 ); 
+ size( 600, 600 );
+ amp = new Amplitude(this);
+ in = new AudioIn(this, 0);
+ in.start();
+ amp.input(in);
 }
 
 void draw(){
@@ -10,9 +19,16 @@ void draw(){
   float cx = width / 2.0;
   float cy = height / 2.0;
   
-  drawBlob( cx, cy, 250, 50, #27FAFF, 155.0, 10, 100 );
-  drawBlob( cx, cy, 150, 20, #27FAFF, 155.0, 10, 300 );
-  drawBlob( cx, cy, 80, 10,  #27FAFF, 155.0, 10, 400 );
+  float vol = amp.analyze();
+  int res = floor( map( vol, 0, 1, 5, 100 ) );
+  color mixColor = lerpColor( c1, c2, vol );
+  
+  
+  drawBlob( cx, cy, vol*350, 50, mixColor, 155.0, res, 100 );
+  drawBlob( cx, cy, vol*250, 20, mixColor, 155.0, res, 200 );
+  drawBlob( cx, cy, vol*180, 10, mixColor, 155.0, res, 300 );
+  
+  //println(amp.analyze());
 
 }
 

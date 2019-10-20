@@ -1,5 +1,6 @@
 import controlP5.*;
 ControlP5 cp5;
+JSONArray values;
 
 int v0r = 50; 
 int v1r = 50;
@@ -13,19 +14,26 @@ color c2 = #11c0c0;
 
 void setup(){
   size(400, 400);
-  cp5 = new ControlP5(this);
-  cp5.addSlider("v0r", 10, 300).linebreak();
-  cp5.addSlider("v1r", 10, 300).linebreak();
-  cp5.addSlider("v2r", 10, 300).linebreak();
-  cp5.addSlider("v3r", 10, 300).linebreak();
-  cp5.addSlider("v4r", 10, 300).linebreak();
-  cp5.addSlider("v5r", 10, 300).linebreak();
-  
+
+ 
 }
 
 void draw() {
   background(255);
- 
+  values = loadJSONArray("data.json"); 
+  JSONObject field = values.getJSONObject(0); 
+  v0r = field.getInt("value");
+  field = values.getJSONObject(1);
+  v1r = field.getInt("value");
+  field = values.getJSONObject(2);
+  v2r = field.getInt("value");
+  field = values.getJSONObject(3);
+  v3r = field.getInt("value");
+  field = values.getJSONObject(4);
+  v4r = field.getInt("value");
+  field = values.getJSONObject(5);
+  v5r = field.getInt("value");
+  
   //noStroke();
   PVector c = new PVector(width/2.0, height/2.0);
   
