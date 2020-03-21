@@ -7,13 +7,15 @@ color c2 = #FF0077;
 float jump = 20;
 
 void setup(){
-  size(400, 400);
+  size(1080, 1080);
   stroke(0, 100);
+  
   pos = new PVector(random(width), random(height));
-  a = loadImage("a.png");
+  a = loadImage("wdl1.png");
   while(!(brightness(a.get(floor(pos.x), floor(pos.y))) == 0)){
     pos = new PVector(random(width), random(height));
   }
+  
   
 }
 
@@ -31,8 +33,9 @@ void draw() {
     newPos = new PVector(pos.x+random(-jump,jump),pos.y+random(-jump,jump));
   }
   
-  
-  
   line(pos.x, pos.y, newPos.x, newPos.y);
   pos = newPos;
+  
+  
+  
 }
