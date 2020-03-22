@@ -4,10 +4,11 @@ PImage src;
 RShape grp;
 ArrayList<Brownian> browns;
 
-color c1 = #00C5FF;
-color c2 = #FF0077;
+color c1 = #000000; //#00C5FF
+color c2 = #03F9FF; //#FF0077 //#F56A0C
 
-
+boolean record = false;
+int f = 0;
 
 void setup(){
   
@@ -33,24 +34,39 @@ void setup(){
   //src = loadImage("wdl1.png");
   
   noFill();
+  background( 255 ); //
   
 }
 
 void draw() {
   
+   if( record ){
    
+     for( int i = 0; i < browns.size(); i++ ){
+       
+       Brownian b = browns.get(i);
+       b.update();
+       
+     }
+     
+     
+     saveFrame( "output/f" + f + ".png" );
+     println( "frame: ", f );
+     f++;
+     
    
-   for( int i = 0; i < browns.size(); i++ ){
-     
-     Brownian b = browns.get(i);
-     b.update();
-     
-     
    }
    
-   grp.draw();
+   //grp.draw();
    
    //println( "bu" );
    
    
+}
+
+
+void keyPressed(){
+ if( key == 'r' ){
+  record = true; 
+ }
 }
