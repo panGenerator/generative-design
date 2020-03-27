@@ -33,7 +33,7 @@ class Letter{
     RPoint topLeft = src.getTopLeft();
     RPoint bottomRight = src.getBottomRight();
     
-    for( float i = 0; i < 1.0; i += 0.05 ){
+    for( float i = 0; i < 1.0; i += 0.025 ){
       
       float py = map( i, 0, 1, topLeft.y - 3, bottomRight.y + 3 );
       RShape cuttingLine = RG.getLine(topLeft.x - 1, py , bottomRight.x + 1, py );
@@ -58,8 +58,8 @@ class Letter{
             AnimLine al = new AnimLine( start, end );
             animLines.add( al );
             
-            stroke( #FF0396 );
-            line( pts[j].x,  pts[j].y, pts[j+1].x,  pts[j+1].y );
+            //stroke( #FF0396 );
+            //line( pts[j].x,  pts[j].y, pts[j+1].x,  pts[j+1].y );
             
           }
          
@@ -74,12 +74,12 @@ class Letter{
   
   void update( float t ){
     
-    //for( int i = 0; i < animLines.size(); i++ ){
+    for( int i = 0; i < animLines.size(); i++ ){
       
-    //  AnimLine al = animLines.get(i);
-    //  al.update();
+      AnimLine al = animLines.get(i);
+      al.update( t );
       
-    //}
+    }
    
   }
   

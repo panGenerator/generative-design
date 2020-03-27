@@ -21,7 +21,7 @@ void setup(){
   RG.init(this);
   RG.setPolygonizer(RG.UNIFORMLENGTH);
   //RG.setPolygonizer(RG.ADAPTATIVE);
-  RG.setPolygonizerLength(5);
+  RG.setPolygonizerLength(2);
   //RG.ignoreStyles(true);
   grp = RG.loadShape("wdl1.svg");
   
@@ -38,13 +38,14 @@ void setup(){
   //src = loadImage("wdl1.png");
   
   stroke( 125 );
+  noFill();
   noiseDetail(3,0.5);
   
 }
 
 void draw() {
   
-  //background( 255 ); //
+  background( 255 ); //
   //fill( 255, 50 );
   //rect( 0, 0, width, height );
   
@@ -53,13 +54,13 @@ void draw() {
      for( int i = 0; i < letters.size(); i++ ){
        
        Letter l = letters.get(i);
-       l.update( f/3.0 );
+       l.update( f*10 );
        
      }
      
      
-     //saveFrame( "output-lines1/lines1-f" + f + ".png" );
-     //println( "frame: ", f );
+     saveFrame( "output-lines1/lines1-f" + f + ".png" );
+     println( "frame: ", f );
      f++;
      
    
